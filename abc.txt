@@ -91,7 +91,6 @@ CopyButton.MouseButton1Click:Connect(function()
 	CopyButton.Text = "Copy Link"
 end)
 
--- Webhook Execution Logger
 task.spawn(function()
 	local Keywords = { "Caterpillar", "Shovel" }
 	local ToolNames, Matches = {}, {}
